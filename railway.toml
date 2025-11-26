@@ -1,0 +1,11 @@
+[build]
+builder = "nixpacks"
+buildCommand = "cd backend/CourseVendor.API && dotnet publish -c Release -o out"
+
+[deploy]
+startCommand = "cd backend/CourseVendor.API/out && dotnet CourseVendor.API.dll"
+restartPolicyType = "on-failure"
+restartPolicyMaxRetries = 10
+
+[env]
+# Railway will use environment variables from the dashboard
