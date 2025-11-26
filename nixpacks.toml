@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ["dotnet-sdk_8"]
+
+[phases.install]
+cmds = ["dotnet restore backend/CourseVendor.API/CourseVendor.API.csproj"]
+
+[phases.build]
+cmds = ["dotnet publish backend/CourseVendor.API/CourseVendor.API.csproj -c Release -o out"]
+
+[start]
+cmd = "dotnet out/CourseVendor.API.dll"

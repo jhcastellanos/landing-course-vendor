@@ -1,6 +1,6 @@
 [build]
 builder = "nixpacks"
-buildCommand = "cd backend/CourseVendor.API && dotnet publish -c Release -o out"
+buildCommand = "dotnet publish backend/CourseVendor.API/CourseVendor.API.csproj -c Release -o out"
 
 [deploy]
-startCommand = "cd backend/CourseVendor.API/out && dotnet CourseVendor.API.dll"
+startCommand = "dotnet out/CourseVendor.API.dll"
